@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV
+  ? '/api'
+  : 'https://task-manager-1-8u9e.onrender.com/api')
+
 const axiosInstance = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
 })
 
 // Request interceptor to attach JWT token
